@@ -7,16 +7,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="alert alert-danger">
+                    @if($errors->has('username') | $errors->has('password') )
+                        <div class="alert alert-danger">
 
-                        <div class="alert-icon">
-                            <i class="material-icons">error_outline</i>
+                            <div class="alert-icon">
+                                <i class="material-icons">error_outline</i>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                            </button>
+                            <b>Error:</b> El nombre de usuario o contraseña no es correcto.
                         </div>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true"><i class="material-icons">clear</i></span>
-                        </button>
-                        <b>Errores:</b> Damn man! You screwed up the server this time.
-                    </div>
+                    @endif
 
                 </div>
 
@@ -38,12 +40,7 @@
                                         </span>
                                 </div>
 
-                                {{ Form::bsText('username') }}
-
-
-
-
-
+                                {{ Form::bsText('name')}}
 
                             </div>
 
@@ -53,7 +50,7 @@
                                           <i class="material-icons">lock_outline</i>
                                         </span>
                                 </div>
-                                {{ Form::bsPassword('username') }}
+                                {{ Form::bsPassword('password') }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -67,8 +64,10 @@
                                 </label>
                             </div>
                         </div>
+                        <br>
                         <div class="footer text-center">
                             <button type="submit" class="btn btn-primary btn-link btn-wd btn-lg">Iniciar Sesión</button>
+
                         </div>
 
                         <div class="footer text-center">

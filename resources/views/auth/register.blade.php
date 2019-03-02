@@ -9,13 +9,20 @@
                 <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                     <div class="card card-login">
 
+
+
                         @if($errors->any())
                             <div class="alert alert-danger">
-                                <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
+
+                                <div class="alert-icon">
+                                    <i class="material-icons">error_outline</i>
+                                </div>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                </button>
+                                @foreach($errors->all() as $error)
+                                   <p> <b>Error:</b>{{ $error }}</p>
+                                @endforeach
                             </div>
                         @endif
 
@@ -32,10 +39,7 @@
                                                   <i class="material-icons">face</i>
                                                 </span>
                                         </div>
-                                        <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                               placeholder="Nombre"
-                                               name="name" value="{{ old('name', $name) }}" required autofocus
-                                        >
+                                        {{ Form::bsName('name') }}
                                     </div>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -43,10 +47,7 @@
                                                   <i class="material-icons">fingerprint</i>
                                                 </span>
                                         </div>
-                                        <input type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}"
-                                               placeholder="Nombre de Usuario"
-                                               name="username" value="{{ old('username') }}" required
-                                        >
+                                        {{ Form::bsText('username') }}
                                     </div>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -54,10 +55,7 @@
                                                   <i class="material-icons">mail</i>
                                                 </span>
                                         </div>
-                                        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                               placeholder="Correo Electrónico..."
-                                               name="email" value="{{ old('email', $email) }}" required autofocus
-                                        >
+                                       {{Form::bsEmail('email')}}
                                     </div>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -76,10 +74,7 @@
                                                   <i class="material-icons">home</i>
                                                 </span>
                                         </div>
-                                        <input type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}"
-                                               placeholder="Dirección del Usuario"
-                                               name="address" value="{{ old('address') }}" required
-                                        >
+                                        {{Form::bsAddress('address')}}
                                     </div>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -87,10 +82,7 @@
                                                   <i class="material-icons">lock_outline</i>
                                                 </span>
                                         </div>
-                                        <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                               placeholder="Contraseña..."
-                                               name="password" required
-                                        >
+                                        {{Form::bsPassword('password')}}
                                     </div>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -98,10 +90,7 @@
                                                   <i class="material-icons">lock_outline</i>
                                                 </span>
                                         </div>
-                                        <input type="password" class="form-control"
-                                               placeholder="Repite la contraseña..."
-                                               name="password_confirmation" required
-                                        >
+                                    {{Form::bsPasswordConfirmation('password_confirmation')}}
                                     </div>
 
                                 </div>
