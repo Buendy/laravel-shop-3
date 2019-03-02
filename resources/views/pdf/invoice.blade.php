@@ -34,7 +34,7 @@
     </li>
 </ul>
 <p><strong>Fecha del pedido:</strong>
-    {{ $cart->order_date->format('d-m-Y h:i:s A') }}
+    {{ $cart->order_date }}
 </p>
 <hr>
 <div class="p-2 border border-info rounded">

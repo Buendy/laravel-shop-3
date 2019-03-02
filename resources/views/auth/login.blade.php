@@ -40,7 +40,7 @@
                                         </span>
                                 </div>
 
-                                {{ Form::bsText('name')}}
+                                {{ Form::bsText('username')}}
 
                             </div>
 

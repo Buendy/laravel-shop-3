@@ -27,8 +27,14 @@ Route::get('/products/{product}', 'ProductController@show');
 
 Route::get('/categories/{category}', 'CategoryController@show');
 
+
+Route::delete('/cart/destroy', 'CartController@destroy');
+Route::get('/cart/{id}', 'CartController@generatePdf');
 Route::post('/cart', 'CartDetailController@store');
 Route::delete('/cart', 'CartDetailController@destroy');
+
+
+
 
 Route::post('/order', 'CartController@update');
 

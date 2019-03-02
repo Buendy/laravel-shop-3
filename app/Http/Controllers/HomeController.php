@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $orders = auth()->user()->carts->where('status', 'Pending');
+        $ordersDone = auth()->user()->carts->where('status', 'Done');
+        //dd($orders);
+        return view('home', compact('orders', 'ordersDone'));
     }
 }
