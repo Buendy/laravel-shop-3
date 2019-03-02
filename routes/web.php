@@ -60,6 +60,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->group
     Route::put('/categories/{category}', 'CategoryController@update');
     Route::delete('/categories/{category}', 'CategoryController@destroy');
 
+    Route::get('/orders', 'OrderController@index');
+    Route::get('/orders/{id}', 'OrderController@show');
+    Route::get('/orders/{id}/accept', 'OrderController@accept');
+
 });
 
 Route::get('/mailable', function (){
