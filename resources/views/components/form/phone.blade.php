@@ -1,1 +1,1 @@
-{{ Form::phone($name,$value,array_merge(['placeholder' => 'Número de teléfono', 'class'=>'form-control', 'required'])) }}
+{{ Form::tel($name, $value, array_merge(['class'=>'form-control'], $attributes)) }}

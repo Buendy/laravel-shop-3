@@ -21,83 +21,82 @@
                                     <span aria-hidden="true"><i class="material-icons">clear</i></span>
                                 </button>
                                 @foreach($errors->all() as $error)
-                                   <p> <b>Error:</b>{{ $error }}</p>
+                                    <p> <b>Error:</b>{{ $error }}</p>
                                 @endforeach
                             </div>
                         @endif
 
-                        <form class="form" method="post" action="{{ route('register') }}">
-                                @csrf
-                                <div class="card-header card-header-primary text-center">
-                                    <h4 class="card-title">Registro</h4>
-                                </div>
-                                <p class="description text-center">Rellena tus datos</p>
-                                <div class="card-body">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                        {!! Form::open(['route'=>'register' , 'method'=>'post']) !!}
+                        @csrf
+                        <div class="card-header card-header-primary text-center">
+                            <h4 class="card-title">Registro</h4>
+                        </div>
+                        <p class="description text-center">Rellena tus datos</p>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
                                                 <span class="input-group-text">
                                                   <i class="material-icons">face</i>
                                                 </span>
-                                        </div>
-                                        {{ Form::bsName('name') }}
-                                    </div>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                                </div>
+                                {{ Form::bsText('name', old('name'), ['placeholder' => 'Nombre...']) }}
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
                                                 <span class="input-group-text">
                                                   <i class="material-icons">fingerprint</i>
                                                 </span>
-                                        </div>
-                                        {{ Form::bsText('username') }}
-                                    </div>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                                </div>
+                                {{ Form::bsText('username', old('username'), ['placeholder' => 'Nombre de usuario']) }}
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
                                                 <span class="input-group-text">
                                                   <i class="material-icons">mail</i>
                                                 </span>
-                                        </div>
-                                       {{Form::bsEmail('email')}}
-                                    </div>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                                </div>
+                                {{Form::bsEmail('email',  old('email'), ['placeholder' => 'Correo electrónico...'])}}
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
                                                 <span class="input-group-text">
                                                   <i class="material-icons">phone</i>
                                                 </span>
-                                        </div>
-                                        <input type="phone" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
-                                               placeholder="Teléfono del Usuario"
-                                               name="phone" value="{{ old('phone') }}" required
-                                        >
-                                    </div>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                                </div>
+                                {{ Form::bsPhone('phone', old('phone'), ['placeholder' => 'Número de teléfono...']) }}
+
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
                                                 <span class="input-group-text">
                                                   <i class="material-icons">home</i>
                                                 </span>
-                                        </div>
-                                        {{Form::bsAddress('address')}}
-                                    </div>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                                </div>
+                                {{Form::bsText('address', old('address'), ['placeholder' => 'Dirección del usuario...'])}}
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
                                                 <span class="input-group-text">
                                                   <i class="material-icons">lock_outline</i>
                                                 </span>
-                                        </div>
-                                        {{Form::bsPassword('password')}}
-                                    </div>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                                </div>
+                                {{Form::bsPassword('password', ['placeholder' => 'Contraseña...'])}}
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
                                                 <span class="input-group-text">
                                                   <i class="material-icons">lock_outline</i>
                                                 </span>
-                                        </div>
-                                    {{Form::bsPasswordConfirmation('password_confirmation')}}
-                                    </div>
+                                </div>
+                                {{Form::bsPasswordConfirmation('password_confirmation', ['placeholder' => 'Repite la contraseña...'])}}
+                            </div>
 
-                                </div>
-                                <div class="footer text-center">
-                                    <button type="submit" class="btn btn-primary btn-link btn-wd btn-lg">Registrar</button>
-                                </div>
-                        </form>
+                        </div>
+                        <div class="footer text-center">
+                            {{ Form::bsSubmit('Registrar') }}
+
+                        </div>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

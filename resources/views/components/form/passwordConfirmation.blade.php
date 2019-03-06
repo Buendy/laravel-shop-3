@@ -1,1 +1,1 @@
-{{ Form::password('password_confirmation', array_merge(['placeholder' => 'Repite contraseña...', 'class'=>'form-control', 'required'])) }}
+{{ Form::password($name, array_merge(['class'=>'form-control'], $attributes)) }}

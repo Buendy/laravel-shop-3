@@ -19,8 +19,8 @@ class FormServiceProvider extends ServiceProvider
         Form::component('bsPhone','components.form.phone',['name','value'=>null,'attributes'=> []]);
         Form::component('bsAddress','components.form.address',['name','value'=>null,'attributes'=> []]);
         Form::component('bsSubmit','components.form.submit',['value', 'attributes'=>[]]);
-        Form::component('bsPassword', 'components.form.password', ['name', 'value' => null, 'attributes' => []]);
-        Form::component('bsPasswordConfirmation', 'components.form.passwordConfirmation', ['name', 'value' => null, 'attributes' => []]);
+        Form::component('bsPassword', 'components.form.password', ['name', 'attributes' => []]);
+        Form::component('bsPasswordConfirmation', 'components.form.passwordConfirmation', ['name', 'attributes' => []]);
     }
 
     /**

@@ -40,7 +40,7 @@
                                         </span>
                                 </div>
 
-                                {{ Form::bsText('username')}}
+                                {{ Form::bsText('username', old('username'), ['placeholder' => 'Nombre de usuario...'])}}
 
                             </div>
 
@@ -50,7 +50,7 @@
                                           <i class="material-icons">lock_outline</i>
                                         </span>
                                 </div>
-                                {{ Form::bsPassword('password') }}
+                                {{ Form::bsPassword('password', ['placeholder' => 'Contraseña...']) }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="footer text-center">
-                            {{ Form::bsSubmit() }}
+                            {{ Form::bsSubmit('Iniciar sesión') }}
                         </div>
                         {!! Form::close() !!}
                     </div>

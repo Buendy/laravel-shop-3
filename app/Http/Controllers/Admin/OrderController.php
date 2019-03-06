@@ -14,8 +14,6 @@ class OrderController extends Controller
     {
         $carts = Cart::where('status','Pending')->get();
 
-
-
         return view('admin.orders.index', compact('carts'));
     }
 

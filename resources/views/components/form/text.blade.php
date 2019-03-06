@@ -1,2 +1,2 @@
-{{ Form::text($name,$value,array_merge(['placeholder' => 'Nombre de usuario', 'class'=>'form-control', 'required'])) }}
+{{ Form::text($name,$value,array_merge(['class' => 'form-control'], $attributes)) }}
 

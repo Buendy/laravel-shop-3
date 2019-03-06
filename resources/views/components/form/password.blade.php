@@ -1,2 +1,2 @@
 
-    {{ Form::password('password', array_merge(['class'=>'form-control', 'placeholder' => 'Contraseña...', 'required'])) }}
+    {{ Form::password('password', array_merge(['class'=>'form-control'], $attributes)) }}

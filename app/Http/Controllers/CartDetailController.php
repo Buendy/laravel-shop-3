@@ -37,8 +37,6 @@ class CartDetailController extends Controller
             $cartDetail->save();
         }
 
-
-
         return back()->with('status', 'El producto se ha añadido al carrito');
     }
 

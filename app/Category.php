@@ -16,7 +16,7 @@ class Category extends Model
     ];
 
     public static $messages = [
-        'name.required' => 'El nombre es obligatorio',
+        'name.required' => 'El nombre es obligatorioz',
         'name.min'      => 'El nombre ha de tener al menos 3 caracteres',
         'description.required' => 'La descripción es obligatoria',
         'description.max' => 'La descripción no puede tener más de 200 caracteres'
